@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 
 const SongList = (props) => {
     const deleteSong = (id) => {
-        props.mutate({variables: {id}, refetchQueries: [{query}]});
+        props.mutate({variables: {id}}).then(() => this.props.data.refetch());
     }
     return (
     <div>
